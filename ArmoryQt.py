@@ -1307,7 +1307,7 @@ class ArmoryMainWindow(QMainWindow):
       reply = QMessageBox.warning(self, tr('Queue Rebuild?'), tr("""
          The next time you restart Armory, it will rebuild and rescan
          the entire blockchain database.  This operation can take between
-         30 minutes and 4 hours depending on you system speed.
+         30 minutes and 4 hours depending on your system speed.
          <br><br>
          Do you wish to force a rebuild on the next Armory restart?"""), \
          QMessageBox.Yes | QMessageBox.No)
@@ -1318,7 +1318,7 @@ class ArmoryMainWindow(QMainWindow):
    def rescanBalanceNextLoad(self):
       reply = QMessageBox.warning(self, tr('Queue Balance Rescan?'), tr("""
          The next time you restart Armory, it will rescan the balance of
-         your wallets. This operation typically takes less than a minute
+         your wallets. This operation typically takes less than a minute.
          <br><br>
          Do you wish to force a balance rescan on the next Armory restart?"""), \
          QMessageBox.Yes | QMessageBox.No)
@@ -1774,7 +1774,7 @@ class ArmoryMainWindow(QMainWindow):
             if not dlgCrypt.exec_():
                QMessageBox.information(parent, tr('Aborted'), tr("""
                   No passphrase was selected for the encrypted backup.
-                  No backup was created"""), QMessageBox.Ok)
+                  No backup was created."""), QMessageBox.Ok)
             newPassphrase = SecureBinaryData(str(dlgCrypt.edtPasswd1.text()))
 
          wlt.makeEncryptedWalletCopy(savePath, newPassphrase)
@@ -5308,7 +5308,7 @@ class ArmoryMainWindow(QMainWindow):
          '<br><br>'
          'Press the button to start the blockchain scan, which '
          'will also put Armory into offline mode for a few minutes '
-         'until the scan operation is complete')
+         'until the scan operation is complete.')
       elif state == 'OnlineDirty':
          return tr( \
          '<b>Wallet balances may '
@@ -5532,7 +5532,7 @@ class ArmoryMainWindow(QMainWindow):
             '<br><br>'
             'You can either revert your installed Bitcoin software to the '
             'last known working version (but not earlier than version 0.8.1) '
-            'or delete everything <b>except</b> "wallet.dat" from the your Bitcoin '
+            'or delete everything <b>except</b> "wallet.dat" from your Bitcoin '
             'home directory:<br><br>'
             '<font face="courier"><b>%(satoshipath)s</b></font>'
             '<br><br>'

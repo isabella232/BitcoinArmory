@@ -8493,7 +8493,7 @@ class DlgAddressBook(ArmoryDialog):
             QMessageBox.critical(self, tr("P2SH Not Allowed"), tr("""
                This operation requires a public key, but you selected a 
                P2SH address which does not have a public key (these addresses
-               start with "2" or "3").  Please select a different address"""), \
+               start with "2" or "3").  Please select a different address."""), \
                QMessageBox.Ok)
             return
    
@@ -8880,7 +8880,7 @@ class DlgSettings(ArmoryDialog):
          coin2strNZS(MIN_TX_FEE))
 
       ttipDefaultFee = self.main.createToolTipWidget(tr("""
-         NOTE: some transactions will require a certain fee
+         NOTE: Some transactions will require a certain fee
          regardless of your settings -- in such cases
          you will be prompted to include the correct
          value or cancel the transaction"""))
@@ -8902,7 +8902,7 @@ class DlgSettings(ArmoryDialog):
          background, and you will still receive notifications.  Access Armory
          through the icon on your system tray.
          <br><br>
-         If select "Minimize on close", the 'x' on the top window bar will
+         If you select "Minimize on close", the 'x' on the top window bar will
          minimize Armory instead of exiting the application.  You can always use
          <i>"File"</i> -> <i>"Quit Armory"</i> to actually close it."""))
 
@@ -9224,7 +9224,7 @@ class DlgSettings(ArmoryDialog):
                            # 'Fees go to users that contribute computing power '
                            # 'to keep the Bitcoin network secure (0.0005 BTC is '
                            # 'standard).', \
-                           # 'NOTE: some transactions will require a fee '
+                           # 'NOTE: Some transactions will require a fee '
                            # 'regardless of your preferences -- in such cases '
                            # 'you will be prompted to include the correct '
                            # 'value or abort the transaction'])
@@ -12411,7 +12411,7 @@ class DlgRestoreSingle(ArmoryDialog):
          
          msg = tr("""
             Detected %(error)d error in the data you entered.
-            Armory attempted to fix the errors but it is not
+            Armory attempted to fix the error but it is not
             always right.  Be sure to verify the "Wallet Unique ID"
             closely on the next window.""","""
             Detected %(error)d errors in the data you entered.
@@ -13136,11 +13136,11 @@ class DlgRestoreFragged(ArmoryDialog):
       if self.fragIDPrefix == UNKNOWN:
          self.fragIDPrefix = idBase58.split('-')[0]
       elif not self.fragIDPrefix == idBase58.split('-')[0]:
-         QMessageBox.critical(self, tr('Multiple Walletss'), tr("""
+         QMessageBox.critical(self, tr('Multiple Wallets'), tr("""
             The fragment you just entered is actually for a different wallet
             than the previous fragments you entered.  Please double-check that
             all the fragments you are entering belong to the same wallet and
-            have the "number of needed fragments" (M-value, in M-of-N)."""), \
+            have the same "number of needed fragments" (M-value, in M-of-N)."""), \
             QMessageBox.Ok)
          LOGERROR('Mixing fragments of different wallets! %s', idBase58)
          return
@@ -13790,7 +13790,7 @@ def finishPrintingBackup(parent, btype=None):
    openTestDlg = False
    msg = tr("""
          Please make sure that any printed backups you create  (excluding any "ID" lines) have <b>nine
-         columns</b> of four letters each
+         columns</b> of four letters
          each.
          If you just made a paper backup, it is important that you test it
          to make sure that it was printed or copied correctly.  Most importantly,
@@ -13962,7 +13962,7 @@ class DlgWltRecoverWallet(ArmoryDialog):
       layout_FullH.addWidget(lblFull, 0, 1, 2, 19)
 
       self.rdbtnCheck = QRadioButton('')
-      lblCheck = QLabel(tr('<b>Consistency Check</b><br>Checks wallet consistency. Works will both full and watch only<br> wallets.'
+      lblCheck = QLabel(tr('<b>Consistency Check</b><br>Checks wallet consistency. Works with both full and watch only<br> wallets.'
                          ' Unlocking of encrypted wallets is not mandatory'))
       layout_CheckH = QGridLayout()
       layout_CheckH.addWidget(self.rdbtnCheck, 0, 0, 1, 1)
@@ -14753,7 +14753,7 @@ class DlgFactoryReset(ArmoryDialog):
             msg = tr("""
                You are about to delete <b>all</b>
                blockchain databases on your system.  The Bitcoin software will
-               have to redownload of blockchain data over the peer-to-peer
+               have to redownload blockchain data over the peer-to-peer
                network again which can take from 8 to 72 hours depending on
                your system speed and connection.  <br><br><b>Are you absolutely
                sure you want to do this?</b>""")
@@ -14761,7 +14761,7 @@ class DlgFactoryReset(ArmoryDialog):
             msg = tr("""
                You are about to delete your settings and delete <b>all</b>
                blockchain databases on your system.  The Bitcoin software will
-               have to redownload of blockchain data over the peer-to-peer
+               have to redownload blockchain data over the peer-to-peer
                network again which can take from 8 to 72 hours depending on
                your system speed and connection.  <br><br><b>Are you absolutely
                sure you want to do this?</b>""")
@@ -14790,7 +14790,7 @@ class DlgFactoryReset(ArmoryDialog):
 
             if not reply:
                QMessageBox.warning(self, tr('Aborted'), tr("""
-                  You canceled the factory-reset operation.  No changes were
+                  You canceled the factory reset operation.  No changes were
                   made."""), QMessageBox.Ok)
                self.reject()
                return
@@ -14833,7 +14833,7 @@ class DlgForkedImports(ArmoryDialog):
       super(DlgForkedImports, self).__init__(parent, main)
 
       descr1 = tr('<h2 style="color: red; text-align: center;">Forked imported addresses have been \
-      detected in your wallets!!!</h2>')
+      detected in your wallets!</h2>')
       
       descr2 = tr('The following wallets have forked imported addresses: <br><br><b>') + \
       '<br>'.join(walletList) + '</b>'
@@ -14845,7 +14845,7 @@ class DlgForkedImports(ArmoryDialog):
       
       descr4 = tr('<h1 style="color: orange;"> - Do not accept payments to these wallets anymore<br>\
       - Do not delete or overwrite these wallets. <br> \
-      - Transfer all funds to a fresh and backed up wallet<h1>')
+      - Transfer all funds to a fresh and backed up wallet</h1>')
       
       lblDescr1 = QRichLabel(descr1)
       lblDescr2 = QRichLabel(descr2)
@@ -15014,7 +15014,7 @@ class DlgBroadcastBlindTx(ArmoryDialog):
          <br><br>
          If this is test
          You can check whether it was seen by other nodes on the network
-         blockchain.info (this link will not work on testnet):
+         via blockchain.info (this link will not work on testnet):
          <br><br>
          <a href="%(link)s">%(disp)s</a>""") % \
          { 'hexhash' : hexhash, 'link' : linkToExplorer, 'disp' : dispToExplorer}, QMessageBox.Ok)
